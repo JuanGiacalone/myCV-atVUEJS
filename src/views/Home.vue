@@ -1,7 +1,10 @@
 <template>
   <div class="card">
-    <img alt="me" class="me" src="../assets/me.jpg">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div
+    class="img-div">
+      <img  alt="me" class="me" src="../assets/me.jpg">
+    </div>
+    <HelloWorld msg="Juan Pablo Giacalone"/>
   </div>
 </template>
 
@@ -11,6 +14,11 @@ import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      hover: false,
+    };
+  },
   components: {
     HelloWorld,
   },
@@ -18,9 +26,10 @@ export default {
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Tajawal:300,400");
+
 .card {
-  width: 60vw;
-    height:60vh;
+  width: 70vw;
+    height:70vh;
     background: linear-gradient(to right, #eb3349, #f45c43);
     font-family: 'Tajawal', sans-serif;
     box-shadow: 1px 2px 10px grey;
@@ -36,14 +45,15 @@ export default {
 }
 .me {
   height: 40vh;
-  border-radius: 5%;
-  margin: 1vw;
+  border-radius: 5.5%;
+  margin: 5vw;
+  margin-left: 2vw;
   z-index: 1;
   border: 0.5vw;
-  box-shadow:  5px 8px 6px -6px black;;
+  box-shadow:  8px 8px 6px -6px black;
 };
-.me:hover img {
-  transition: transform .25s ease;
-  transform:  scale(.5);
+.img-div:hover {
+  transition: transform .25s;
+  transform:  scale(1.20);
 }
 </style>
